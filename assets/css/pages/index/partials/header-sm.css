@@ -1,0 +1,82 @@
+@media (max-width: 768px) {
+  .presentation {
+    overflow-x: hidden;
+    position: relative;
+  }
+  .leftBar {
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 10.75rem;
+    }
+  }
+  .btnNavigation {
+    display: block;
+  }
+  .mobileMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header {
+    padding: 0;
+    flex-direction: column;
+    height: 13vh;
+  }
+
+  .navGov {
+    position: relative;
+  }
+
+  .navBar {
+    z-index: 1;
+    background-color: #2e2e2fcc;
+    position: fixed;
+    padding-top: 17%;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    right: -50vw;
+    animation-duration: 0.5s;
+    .navLinks {
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      button {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .rightBar {
+    display: none;
+  }
+
+  #mobileContent {
+    height: 87vh;
+  }
+
+  .topics {
+    display: none;
+  }
+}
+
+@keyframes showSidebar {
+  from {
+    right: -50vw;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes closeSidebar {
+  from {
+    right: 0;
+  }
+  to {
+    right: -50vw;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../global/global.css";
+@import "./partials/header-lg.css";
+@import "./partials/header-sm.css";
+
+.presentation {
+  background-image: linear-gradient(
+      rgba(12, 50, 111, 0.9) 0%,
+      rgba(12, 50, 111, 0.3) 45%
+    ),
+    url("../../../images/bosque.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}

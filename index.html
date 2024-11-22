@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- CSS PADRÃO -->
+    <link rel="stylesheet" href="./assets/css/pages/index/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script src="./assets/js/pages/index/index.js" defer></script>
+    <title>Página inicial</title>
+  </head>
+  <body class="presentation">
+    <header class="header" id="header">
+      <div class="leftBar">
+        <a href="./index.html"
+          ><img src="./assets/images/logoCEFET.webp" alt="logo do CEFET"
+        /></a>
+        <div class="mobileMenu">
+          <button class="btnNavigation" onclick="toggleSidebar()">
+            <i class="fas fa-bars fa-2x" style="color: #fff"></i>
+          </button>
+        </div>
+      </div>
+      <div class="navBar" id="navigationHeader">
+        <ul class="navLinks">
+          <button class="btnNavigation" onclick="toggleSidebar()">
+            <i class="fas fa-times fa-lg" style="color: #fff"></i>
+          </button>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
+      <div class="rightBar">
+        <div class="searchBar">
+          <form action="">
+            <button type="submit">
+              <i class="fas fa-search text-pure-0" id="searchIcon"></i>
+            </button>
+            <input
+              type="search"
+              name="pesquisar"
+              id="searchBox"
+              placeholder="Busque no portal"
+            />
+          </form>
+        </div>
+        <div class="iconsMedia">
+          <a href="https://www.facebook.com/cefetrjoficial" target="_blank">
+            <i class="fa-brands fa-facebook" id="facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/cefet_rj/" target="_blank">
+            <i class="fa-brands fa-instagram fa-lg" id="instagram"></i>
+          </a>
+          <a href="https://twitter.com/cefet_rj" target="_blank">
+            <i class="fa-brands fa-x-twitter fa-lg" id="x-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/cefetrjoficial" target="_blank">
+            <i class="fa-brands fa-youtube fa-lg" id="youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/school/cefetrjoficial/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin fa-lg" id="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div tabindex="0" onclick="closeSidebar()" id="mobileContent"></div>
+  </body>
+</html>
