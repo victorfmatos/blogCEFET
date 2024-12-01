@@ -1,9 +1,9 @@
 @media (max-width: 768px) {
-  .presentation {
+  .body--homepage {
     overflow-x: hidden;
     position: relative;
   }
-  .leftBar {
+  .header__left {
     padding: 20px;
     margin: 10px;
     width: 100%;
@@ -13,10 +13,13 @@
       width: 10.75rem;
     }
   }
-  .btnNavigation {
+  .header__menu-toggle,
+  .header__menu-close {
     display: block;
+    background-color: transparent;
+    border: none;
   }
-  .mobileMenu {
+  .header__menu-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,11 +30,7 @@
     height: 13vh;
   }
 
-  .navGov {
-    position: relative;
-  }
-
-  .navBar {
+  .header__nav {
     z-index: 1;
     background-color: #2e2e2fcc;
     position: fixed;
@@ -41,25 +40,21 @@
     height: 100vh;
     right: -50vw;
     animation-duration: 0.5s;
-    .navLinks {
-      align-items: center;
+    .header__nav-list {
       justify-content: space-around;
       flex-direction: column;
-      button {
+      .header__menu-toggle,
+      .header__menu-close {
         margin-bottom: 50px;
       }
     }
   }
-  .rightBar {
+  .header__right {
     display: none;
   }
 
-  #mobileContent {
+  #header__menu-close {
     height: 87vh;
-  }
-
-  .topics {
-    display: none;
   }
 }
 

@@ -3,83 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <!-- CSS PADRÃO -->
-    <link rel="stylesheet" href="./assets/css/pages/index/index.css" />
+    <link rel="stylesheet" href="/assets/css/pages/index/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
-    <!-- ICONS FONT AWESOME -->
+    <!-- ÍCONES FONT AWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <script src="./assets/js/pages/index/index.js" defer></script>
+    <!-- CÓDIGO JS PADRÃO -->
+    <script src="/assets/js/pages/index/menu.js" defer></script>
     <title>Página inicial</title>
   </head>
-  <body class="presentation">
-    <header class="header" id="header">
-      <div class="leftBar">
-        <a href="./index.html"
-          ><img src="./assets/images/logoCEFET.webp" alt="logo do CEFET"
+  <body class="body--homepage">
+    <header class="header">
+      <!-- Parte à esquerda com o logo e menu mobile -->
+      <div class="header__left">
+        <a href="/index.html"
+          ><img
+            src="/assets/images/logoCEFET.webp"
+            alt="logo do CEFET"
+            class="header__logo"
         /></a>
-        <div class="mobileMenu">
-          <button class="btnNavigation" onclick="toggleSidebar()">
+        <div class="header__menu-mobile">
+          <button class="header__menu-toggle" onclick="toggleSidebar()">
             <i class="fas fa-bars fa-2x" style="color: #fff"></i>
           </button>
         </div>
       </div>
-      <div class="navBar" id="navigationHeader">
-        <ul class="navLinks">
-          <button class="btnNavigation" onclick="toggleSidebar()">
-            <i class="fas fa-times fa-lg" style="color: #fff"></i>
+
+      <!-- Parte ao meio com a barra de navegação -->
+      <div class="header__nav" id="header__nav">
+        <ul class="header__nav-list">
+          <button class="header__menu-close" onclick="toggleSidebar()">
+            <i class="fa-solid fa-xmark fa-lg" style="color: #fff"></i>
           </button>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+          <li><a href="/index.html" class="header__nav-item">INÍCIO</a></li>
+          <li><a href="#" class="header__nav-item"></a></li>
+          <li><a href="#" class="header__nav-item"></a></li>
+          <li><a href="#" class="header__nav-item"></a></li>
+          <li>
+            <a href="/register.html" class="header__nav-item">CADASTRO</a>
+          </li>
         </ul>
       </div>
-      <div class="rightBar">
-        <div class="searchBar">
+
+      <!-- Parte à direita com barra de busca e redes sociais -->
+      <div class="header__right">
+        <!-- Barra de pesquisa -->
+        <div class="header__search">
           <form action="">
-            <button type="submit">
-              <i class="fas fa-search text-pure-0" id="searchIcon"></i>
+            <button type="submit" class="header__search-btn">
+              <i class="fas fa-search text-pure-0" id="header__search-icon"></i>
             </button>
             <input
               type="search"
               name="pesquisar"
               id="searchBox"
               placeholder="Busque no portal"
+              class="header__search-input"
             />
           </form>
         </div>
-        <div class="iconsMedia">
+
+        <!-- Ícones de redes sociais -->
+        <div class="header__social">
           <a href="https://www.facebook.com/cefetrjoficial" target="_blank">
-            <i class="fa-brands fa-facebook" id="facebook"></i>
+            <i
+              class="fa-brands fa-facebook fa-lg header__social-link"
+              id="header__social-link-facebook"
+            ></i>
           </a>
           <a href="https://www.instagram.com/cefet_rj/" target="_blank">
-            <i class="fa-brands fa-instagram fa-lg" id="instagram"></i>
+            <i
+              class="fa-brands fa-instagram fa-lg header__social-link"
+              id="header__social-link-instagram"
+            ></i>
           </a>
           <a href="https://twitter.com/cefet_rj" target="_blank">
-            <i class="fa-brands fa-x-twitter fa-lg" id="x-twitter"></i>
+            <i
+              class="fa-brands fa-x-twitter fa-lg header__social-link"
+              id="header__social-link-x-twitter"
+            ></i>
           </a>
           <a href="https://www.youtube.com/cefetrjoficial" target="_blank">
-            <i class="fa-brands fa-youtube fa-lg" id="youtube"></i>
+            <i
+              class="fa-brands fa-youtube fa-lg header__social-link"
+              id="header__social-link-youtube"
+            ></i>
           </a>
           <a
             href="https://www.linkedin.com/school/cefetrjoficial/"
             target="_blank"
           >
-            <i class="fa-brands fa-linkedin fa-lg" id="linkedin"></i>
+            <i
+              class="fa-brands fa-linkedin fa-lg header__social-link"
+              id="header__social-link-linkedin"
+            ></i>
           </a>
         </div>
       </div>
     </header>
-    <div tabindex="0" onclick="closeSidebar()" id="mobileContent"></div>
+    <!-- <main>
+      <button class="post">POSTAR</button>
+      <form action="">
+        <label for="text-post">Publicação</label>
+        <input type="text" name="text-post" id="text-post" />
+      </form>
+    </main> -->
+    <div tabindex="0" onclick="closeSidebar()" id="header__menu-close"></div>
   </body>
 </html>

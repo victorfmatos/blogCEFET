@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <!-- CSS PADRÃO -->
+    <link rel="stylesheet" href="/assets/css/pages/register/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ÍCONES FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!-- CÓDIGO JS PADRÃO -->
+    <script src="/assets/js/pages/register/showBox.js" defer></script>
+    <title>Página inicial</title>
+  </head>
+  <body class="presentation">
+    <div class="presentationSection">
+      <div class="x">
+        <img class="foto" src="/assets/images/logoCEFET.webp" />
+        <br />
+        <h1>Blog</h1>
+      </div>
+      <div class="loginSection">
+        <div class="loginSectionLeft">
+          <h2>O que acontece no campus?</h2>
+          <br />
+          <br />
+          <h4>Inscreva-se já!</h4>
+          <button class="botao" onclick="toggleRegisterBox()">
+            Criar conta
+          </button>
+          <br />
+          <br />
+          <h4>Já tem uma conta?</h4>
+          <button class="botao">Entrar</button>
+        </div>
+        <div class="displayCredentials" id="displayCredentials">
+          <form action="/assets/php/pages/register/register.php" method="post">
+            <button class="closeButton">
+              <i class="fa-solid fa-xmark fa-lg"></i>
+            </button>
+            <label for="username" class="labelInput">Nome de Usuário: </label>
+            <br />
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="inputText"
+            />
+            <br />
+            <label for="email" class="labelInput">Email: </label>
+            <br />
+            <input type="email" name="email" id="email" />
+            <br />
+            <label for="password" class="labelInput">Senha: </label>
+            <br />
+            <input type="password" name="password" id="password" />
+            <br />
+            <label for="confirmPassword" class="labelInput"
+              >Confirme a senha:
+            </label>
+            <br />
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+            />
+            <input type="submit" value="Cadastrar" id="verticalText" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

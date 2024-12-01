@@ -1,0 +1,152 @@
+@import "../../global/global.css";
+@import "./partials/register-sm.css";
+@import "./partials/register-lg.css";
+
+.presentation {
+  background-image: linear-gradient(
+      rgba(12, 50, 111, 0.9) 0%,
+      rgba(12, 50, 111, 0.3) 45%
+    ),
+    url("../../../images/bosque.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.presentationSection {
+  display: flex;
+}
+
+.x {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+.loginSection {
+  display: flex;
+  position: absolute;
+  top: 22%;
+  left: 40%;
+}
+
+.loginButtons {
+  text-align: start;
+  height: 14rem;
+  position: absolute;
+  top: 32%;
+  right: 30%;
+}
+
+h1 {
+  color: white;
+  font-size: 130px;
+}
+h2 {
+  color: white;
+  font-size: 60px;
+}
+h4 {
+  color: white;
+  font-size: 40px;
+}
+.botao {
+  border: 2px solid #fff;
+  width: 16rem;
+  height: 2rem;
+  background-color: var(--lightBlue);
+  border-radius: 10px;
+  transition: 0.25s;
+  color: #fff;
+  &:hover {
+    border-color: var(--darkBlue);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+.foto {
+  width: 400px;
+}
+
+.displayCredentials {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 20rem;
+  height: 14rem;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: var(--lightBlue);
+  position: absolute;
+  top: 36%;
+  right: 5%;
+  animation-duration: 0.75s;
+  form {
+    opacity: 0;
+    animation-delay: 0.75s;
+    animation-duration: 0.75s;
+  }
+}
+
+.labelInput {
+  letter-spacing: 1.5px;
+}
+
+#verticalText {
+  background-color: #fff;
+  padding: 0;
+  width: 6rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+@keyframes showFormsBox {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes closeFormsBox {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showRegisterBox {
+  0% {
+    transform: scaleY(0%) scaleX(5%);
+  }
+  50% {
+    transform: scaleY(100%) scaleX(5%);
+  }
+  100% {
+    transform: scaleY(100%) scaleX(100%);
+  }
+}
+
+@keyframes closeRegisterBox {
+  0% {
+    transform: scaleY(100%) scaleX(100%);
+  }
+  50% {
+    transform: scaleY(100%) scaleX(5%);
+  }
+  100% {
+    transform: scaleY(0%) scaleX(5%);
+  }
+}
