@@ -1,19 +1,21 @@
-let header__nav = document.getElementById("header__nav");
-let header__menu_close = document.getElementById("header__menu-close");
+let header__navigation = document.getElementById("header__navigation");
+let overlay = document.getElementById("overlay");
 let showSideBar = false;
 let lastPosition = 0;
 
 function toggleSidebar() {
   showSideBar = !showSideBar;
   if (showSideBar) {
-    header__nav.style.right = "0";
-    header__nav.style.animationName = "showSidebar";
-    header__menu_close.style.filter = "blur(2px)";
+    header__navigation.style.right = "0";
+    header__navigation.style.animationName = "showSidebar";
+    overlay.style.backdropFilter = "blur(2px)";
+    overlay.style.animationName = "showSidebarFilter";
     showSideBar = true;
   } else {
-    header__nav.style.right = "-50vw";
-    header__nav.style.animationName = "closeSidebar";
-    header__menu_close.style.filter = "";
+    header__navigation.style.right = "-50vw";
+    header__navigation.style.animationName = "closeSidebar";
+    overlay.style.backdropFilter = "blur(0px)";
+    overlay.style.animationName = "closeSidebarFilter";
     showSideBar = false;
   }
 }

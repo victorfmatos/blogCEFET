@@ -1,6 +1,4 @@
 @import "../../global/global.css";
-@import "./partials/register-sm.css";
-@import "./partials/register-lg.css";
 
 .presentation {
   background-image: linear-gradient(

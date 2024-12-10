@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/icons/" type="image/x-icon" />
     <!-- CSS PADRÃO -->
-    <link rel="stylesheet" href="/assets/css/pages/register/register.css" />
+    <link rel="stylesheet" href="assets/css/pages/register/register.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,13 +18,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
     <!-- CÓDIGO JS PADRÃO -->
-    <script src="/assets/js/pages/register/showBox.js" defer></script>
+    <script src="assets/js/pages/register/showBox.js" defer></script>
     <title>Página inicial</title>
   </head>
   <body class="presentation">
     <div class="presentationSection">
       <div class="x">
-        <img class="foto" src="/assets/images/logoCEFET.webp" />
+        <img class="foto" src="assets/images/logoCEFET.webp" />
         <br />
         <h1>Blog</h1>
       </div>
@@ -43,8 +43,8 @@
           <button class="botao">Entrar</button>
         </div>
         <div class="displayCredentials" id="displayCredentials">
-          <form action="/assets/php/pages/register/register.php" method="post">
-            <button class="closeButton">
+          <form action="php/auth/register.php" target="register" method="post">
+            <button class="closeButton" onclick="closeRegisterBox()">
               <i class="fa-solid fa-xmark fa-lg"></i>
             </button>
             <label for="username" class="labelInput">Nome de Usuário: </label>
@@ -78,5 +78,6 @@
         </div>
       </div>
     </div>
+    <iframe style="display: none" name="register"></iframe>
   </body>
 </html>

@@ -21,3 +21,9 @@ function toggleRegisterBox() {
     showRegisterBox = false;
   }
 }
+
+function closeRegisterBox() {
+  if (showRegisterBox) {
+    toggleRegisterBox();
+  }
+}
