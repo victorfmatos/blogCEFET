@@ -1,6 +1,6 @@
 @import "../../global/global.css";
 
-.presentation {
+.registerPage {
   background-image: linear-gradient(
       rgba(12, 50, 111, 0.9) 0%,
       rgba(12, 50, 111, 0.3) 45%
@@ -10,96 +10,98 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-}
-
-.presentationSection {
   display: flex;
+  align-items: center;
 }
 
-.x {
-  position: absolute;
-  top: 30%;
-  left: 5%;
+.presentation {
+  margin: 6rem;
+  margin-bottom: 16rem;
 }
 
-.loginSection {
+.mainContent {
+  margin-bottom: 10rem;
+}
+
+.intro {
+  margin-top: 2rem;
   display: flex;
-  position: absolute;
-  top: 22%;
-  left: 40%;
-}
-
-.loginButtons {
-  text-align: start;
   height: 14rem;
-  position: absolute;
-  top: 32%;
-  right: 30%;
 }
 
-h1 {
+.presentation__title {
   color: white;
   font-size: 130px;
 }
-h2 {
+
+.intro__title {
   color: white;
   font-size: 60px;
 }
-h4 {
+
+.intro__ctaText {
   color: white;
   font-size: 40px;
 }
-.botao {
-  border: 2px solid #fff;
+
+.intro__button--register,
+.intro__button--login {
   width: 16rem;
   height: 2rem;
-  background-color: var(--lightBlue);
-  border-radius: 10px;
-  transition: 0.25s;
-  color: #fff;
-  &:hover {
-    border-color: var(--darkBlue);
-  }
-  &:active {
-    transform: scale(0.9);
-  }
-}
-.foto {
-  width: 400px;
 }
 
-.displayCredentials {
+.presentation__logo {
+  width: 25rem;
+}
+
+.modal--register {
+  margin-left: 4rem;
+  position: relative;
   display: none;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+  float: right;
+  color: var(--white);
   width: 20rem;
   height: 14rem;
-  border: 2px solid #fff;
+  border: 2px solid var(--white);
   border-radius: 10px;
   background-color: var(--lightBlue);
-  position: absolute;
-  top: 36%;
-  right: 5%;
   animation-duration: 0.75s;
-  form {
+  .form--register {
+    margin-left: 1.5rem;
+    width: 20rem;
+    height: 14rem;
     opacity: 0;
     animation-delay: 0.75s;
     animation-duration: 0.75s;
   }
 }
 
-.labelInput {
+.form__group {
+  margin: 0.5rem 0;
+}
+
+.form__label {
   letter-spacing: 1.5px;
 }
 
-#verticalText {
-  background-color: #fff;
-  padding: 0;
-  width: 6rem;
+.form__button--submit {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 5.5rem;
+  height: 2rem;
+  background-color: var(--white);
+  color: var(--darkBlue);
+  border-radius: 20px;
+  border: 2px solid var(--lightBlue);
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.25s;
+  &:hover {
+    border-color: var(--darkBlue);
+  }
 }
 
-.closeButton {
+.modal__button--close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -107,20 +109,24 @@ h4 {
   background-color: transparent;
 }
 
+.iframe--hidden {
+  display: none;
+}
+
 @keyframes showFormsBox {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
 
 @keyframes closeFormsBox {
-  0% {
+  from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
   }
 }

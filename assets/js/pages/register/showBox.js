@@ -1,22 +1,22 @@
-let displayCredentials = document.getElementById("displayCredentials");
+let registerModal = document.getElementById("registerModal");
 let showRegisterBox = false;
 
 function toggleRegisterBox() {
   showRegisterBox = !showRegisterBox;
   if (showRegisterBox) {
-    displayCredentials.style.display = "flex";
-    displayCredentials.style.animationName = "showRegisterBox";
-    displayCredentials.firstElementChild.style.animationName = "showFormsBox";
+    registerModal.style.display = "flex";
+    registerModal.style.animationName = "showRegisterBox";
+    registerModal.firstElementChild.style.animationName = "showFormsBox";
     setTimeout(() => {
-      displayCredentials.firstElementChild.style.opacity = 1;
-    }, 750);
+      registerModal.firstElementChild.style.opacity = 1;
+    }, 1000);
     showRegisterBox = true;
   } else {
-    displayCredentials.style.animationName = "closeRegisterBox";
-    displayCredentials.firstElementChild.style.animationName = "closeFormsBox";
-    displayCredentials.firstElementChild.style.opacity = 0;
+    registerModal.style.animationName = "closeRegisterBox";
+    registerModal.firstElementChild.style.animationName = "closeFormsBox";
+    registerModal.firstElementChild.style.opacity = 0;
     setTimeout(() => {
-      displayCredentials.style.display = "none";
+      registerModal.style.display = "none";
     }, 750);
     showRegisterBox = false;
   }

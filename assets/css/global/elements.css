@@ -14,8 +14,6 @@ button {
 }
 
 input {
-  font-size: 1vw;
-  margin-left: 0.1vw;
   padding-left: 10px;
   border-radius: 20px;
   border: 2px solid var(--lightBlue);

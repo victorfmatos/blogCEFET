@@ -1,7 +1,7 @@
 @import "../../global/global.css";
 @import "./partials/header.css";
 
-.homepage {
+.homePage {
   background-image: linear-gradient(
       rgba(12, 50, 111, 0.9) 0%,
       rgba(12, 50, 111, 0.3) 45%

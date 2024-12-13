@@ -4,80 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/icons/" type="image/x-icon" />
-    <!-- CSS PADRÃO -->
-    <link rel="stylesheet" href="assets/css/pages/register/register.css" />
+    <!-- ÍCONES FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!-- FONTES GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
-    <!-- ÍCONES FONT AWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <!-- CÓDIGO CSS PADRÃO -->
+    <link rel="stylesheet" href="assets/css/pages/register/register.css" />
     <!-- CÓDIGO JS PADRÃO -->
     <script src="assets/js/pages/register/showBox.js" defer></script>
-    <title>Página inicial</title>
+    <title>Cadastro e Login</title>
   </head>
-  <body class="presentation">
-    <div class="presentationSection">
-      <div class="x">
-        <img class="foto" src="assets/images/logoCEFET.webp" />
-        <br />
-        <h1>Blog</h1>
-      </div>
-      <div class="loginSection">
-        <div class="loginSectionLeft">
-          <h2>O que acontece no campus?</h2>
-          <br />
-          <br />
-          <h4>Inscreva-se já!</h4>
-          <button class="botao" onclick="toggleRegisterBox()">
+  <body class="registerPage">
+    <aside class="presentation">
+      <img class="presentation__logo" src="assets/images/logoCEFET.webp" />
+      <h1 class="presentation__title">Blog</h1>
+    </aside>
+
+    <main class="mainContent">
+      <h2 class="intro__title">O que acontece no campus?</h2>
+      <section class="intro">
+        <div class="intro__cta">
+          <h4 class="intro__ctaText">Inscreva-se já!</h4>
+          <button class="intro__button--register" onclick="toggleRegisterBox()">
             Criar conta
           </button>
-          <br />
-          <br />
-          <h4>Já tem uma conta?</h4>
-          <button class="botao">Entrar</button>
+          <h4 class="intro__ctaText">Já tem uma conta?</h4>
+          <button class="intro__button--login">Entrar</button>
         </div>
-        <div class="displayCredentials" id="displayCredentials">
-          <form action="php/auth/register.php" target="register" method="post">
-            <button class="closeButton" onclick="closeRegisterBox()">
+        <div class="modal--register" id="registerModal" aria-hidden="true">
+          <form
+            class="form--register"
+            action="php/auth/register.php"
+            target="register"
+            method="post"
+          >
+            <button
+              type="button"
+              class="modal__button--close"
+              onclick="closeRegisterBox()"
+              aria-label="Fechar"
+            >
               <i class="fa-solid fa-xmark fa-lg"></i>
             </button>
-            <label for="username" class="labelInput">Nome de Usuário: </label>
-            <br />
-            <input
-              type="text"
-              name="username"
-              id="username"
-              class="inputText"
-            />
-            <br />
-            <label for="email" class="labelInput">Email: </label>
-            <br />
-            <input type="email" name="email" id="email" />
-            <br />
-            <label for="password" class="labelInput">Senha: </label>
-            <br />
-            <input type="password" name="password" id="password" />
-            <br />
-            <label for="confirmPassword" class="labelInput"
-              >Confirme a senha:
-            </label>
-            <br />
-            <input
-              type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-            />
-            <input type="submit" value="Cadastrar" id="verticalText" />
+            <div class="form__group">
+              <label for="username" class="form__label"
+                >Nome de Usuário:
+              </label>
+              <br />
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="form__input"
+                required
+                autocomplete="username"
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">Email: </label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form__input"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="password" class="form__label">Senha: </label>
+              <br />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form__input"
+                required
+                autocomplete="new-password"
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="confirmPassword" class="form__label"
+                >Confirme a senha:
+              </label>
+              <br />
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                class="form__input"
+                required
+                autocomplete="new-password"
+              />
+            </div>
+
+            <button type="submit" value="submit" class="form__button--submit">
+              Cadastrar
+            </button>
           </form>
         </div>
-      </div>
-    </div>
-    <iframe style="display: none" name="register"></iframe>
+      </section>
+    </main>
+    <iframe class="iframe--hidden" name="register" aria-hidden="true"></iframe>
   </body>
 </html>
