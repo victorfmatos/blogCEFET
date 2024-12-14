@@ -9,24 +9,33 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
 
 .presentation {
-  margin: 6rem;
-  margin-bottom: 16rem;
+  position: relative;
+  margin: 4rem;
+  bottom: 2.5%;
+  height: 22rem;
 }
 
 .mainContent {
-  margin-bottom: 10rem;
+  position: relative;
+  height: 26rem;
+  bottom: 5%;
 }
 
 .intro {
-  margin-top: 2rem;
   display: flex;
-  height: 14rem;
+  align-items: center;
+  height: 20rem;
+}
+
+.intro__cta {
+  position: relative;
+  bottom: 1rem;
 }
 
 .presentation__title {
@@ -55,49 +64,75 @@
 }
 
 .modal--register {
-  margin-left: 4rem;
+  margin-left: 1rem;
   position: relative;
   display: none;
   float: right;
   color: var(--white);
-  width: 20rem;
-  height: 14rem;
+  width: 24rem;
+  height: 19rem;
   border: 2px solid var(--white);
   border-radius: 10px;
   background-color: var(--lightBlue);
   animation-duration: 0.75s;
   .form--register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.6rem;
     margin-left: 1.5rem;
     width: 20rem;
-    height: 14rem;
     opacity: 0;
     animation-delay: 0.75s;
     animation-duration: 0.75s;
   }
 }
 
-.form__group {
-  margin: 0.5rem 0;
-}
-
 .form__label {
   letter-spacing: 1.5px;
 }
 
+.form__input {
+  width: 14rem;
+  height: 1.8rem;
+  border-color: var(--darkBlue);
+}
+
+.form__icon {
+  position: relative;
+  font-size: 0.8rem;
+  color: var(--darkBlue);
+  right: 1.6rem;
+}
+
 .form__button--submit {
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  right: 1.5rem;
   width: 5.5rem;
   height: 2rem;
   background-color: var(--white);
-  color: var(--darkBlue);
+  color: var(--black);
   border-radius: 20px;
-  border: 2px solid var(--lightBlue);
+  border: 2px solid var(--darkBlue);
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
   transition: 0.25s;
+
   &:hover {
-    border-color: var(--darkBlue);
+    background-color: var(--darkBlue);
+    color: var(--whites);
+  }
+
+  .button__text {
+    animation-duration: 0.25s;
+  }
+
+  .button__icon {
+    color: var(--darkBlue);
+    display: none;
+    opacity: 0;
+    text-align: center;
+    animation-delay: 0.25s;
+    animation-duration: 0.5s;
   }
 }
 
@@ -111,6 +146,18 @@
 
 .iframe--hidden {
   display: none;
+}
+
+@keyframes submitRegisterButton {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hideRegisterButton {
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes showFormsBox {

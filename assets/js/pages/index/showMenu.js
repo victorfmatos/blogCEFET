@@ -1,4 +1,4 @@
-let header__navigation = document.getElementById("header__navigation");
+let navigationHeader = document.getElementById("navigationHeader");
 let overlay = document.getElementById("overlay");
 let showSideBar = false;
 let lastPosition = 0;
