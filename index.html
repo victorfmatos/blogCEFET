@@ -32,22 +32,18 @@
             alt="logo do CEFET"
             class="header__logo"
         /></a>
-        <div class="menu">
-          <button class="menu__button--toggle" onclick="toggleSidebar()">
-            <i class="fas fa-bars fa-2x" style="color: #fff"></i>
-          </button>
-        </div>
       </div>
 
       <!-- Parte ao meio com a barra de navegação -->
       <nav class="header__navigation" id="navigationHeader">
-        <ul class="navigation__list">
-          <button class="menu__button--close" onclick="toggleSidebar()">
-            <i class="fa-solid fa-xmark fa-lg" style="color: #fff"></i>
-          </button>
-          <li><a href="index.html" class="navigation__link">INÍCIO</a></li>
-          <li><a href="#" class="navigation__link">DESTAQUES</a></li>
-          <li><a href="register.html" class="navigation__link">PERFIL</a></li>
+        <ul class="navigation__list--header">
+          <li>
+            <a href="index.html" class="navigation__link--header">INÍCIO</a>
+          </li>
+          <li><a href="#" class="navigation__link--header">DESTAQUES</a></li>
+          <li>
+            <a href="register.html" class="navigation__link--header">PERFIL</a>
+          </li>
         </ul>
       </nav>
 
@@ -107,13 +103,33 @@
         </div>
       </div>
     </header>
-    <!-- <main>
-      <button class="post">POSTAR</button>
-      <form action="">
-        <label for="text-post">Publicação</label>
-        <input type="text" name="text-post" id="text-post" />
-      </form>
-    </main> -->
+    <main class="main">
+      <aside class="aside--left">
+        <nav class="aside__navigation">
+          <ul class="navigation__list--aside">
+            <li class="navigation__itemList--aside">
+              <a href="#" class="navigation__link--aside">SALVOS</a>
+            </li>
+            <li class="navigation__itemList--aside">
+              <a href="#" class="navigation__link--aside">CURTIDOS</a>
+            </li>
+            <li class="navigation__itemList--aside">
+              <a href="#" class="navigation__link--aside">AMIGOS</a>
+            </li>
+            <li class="navigation__itemList--aside">
+              <a href="#" class="navigation__link--aside">PÁGINA DO CEFET</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div id="verticalLine--left"></div>
+      <section class="section"></section>
+      <div id="verticalLine--right"></div>
+      <aside class="aside--right">
+        <h3 class="aside__title">POSTE AQUI!</h3>
+        <div class="aside__postBlock"></div>
+      </aside>
+    </main>
     <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
   </body>
 </html>

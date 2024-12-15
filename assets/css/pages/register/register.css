@@ -9,48 +9,39 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
 
 .presentation {
-  position: relative;
-  margin: 4rem;
-  bottom: 2.5%;
-  height: 22rem;
+  margin: 6rem;
+  margin-bottom: 16rem;
 }
 
 .mainContent {
-  position: relative;
-  height: 26rem;
-  bottom: 5%;
+  margin-bottom: 10rem;
 }
 
 .intro {
+  margin-top: 2rem;
   display: flex;
-  align-items: center;
-  height: 20rem;
-}
-
-.intro__cta {
-  position: relative;
-  bottom: 1rem;
+  height: 14rem;
 }
 
 .presentation__title {
   color: white;
-  font-size: 130px;
+  font-size: 8rem;
 }
 
 .intro__title {
   color: white;
-  font-size: 60px;
+  font-size: 3.8rem;
 }
 
 .intro__ctaText {
   color: white;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .intro__button--register,
@@ -64,75 +55,49 @@
 }
 
 .modal--register {
-  margin-left: 1rem;
+  margin-left: 4rem;
   position: relative;
   display: none;
   float: right;
   color: var(--white);
-  width: 24rem;
-  height: 19rem;
+  width: 20rem;
+  height: 14rem;
   border: 2px solid var(--white);
   border-radius: 10px;
   background-color: var(--lightBlue);
   animation-duration: 0.75s;
   .form--register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.6rem;
     margin-left: 1.5rem;
     width: 20rem;
+    height: 14rem;
     opacity: 0;
     animation-delay: 0.75s;
     animation-duration: 0.75s;
   }
 }
 
+.form__group {
+  margin: 0.5rem 0;
+}
+
 .form__label {
   letter-spacing: 1.5px;
 }
 
-.form__input {
-  width: 14rem;
-  height: 1.8rem;
-  border-color: var(--darkBlue);
-}
-
-.form__icon {
-  position: relative;
-  font-size: 0.8rem;
-  color: var(--darkBlue);
-  right: 1.6rem;
-}
-
 .form__button--submit {
   position: absolute;
-  right: 1.5rem;
+  bottom: 1rem;
+  right: 1rem;
   width: 5.5rem;
   height: 2rem;
   background-color: var(--white);
-  color: var(--black);
+  color: var(--darkBlue);
   border-radius: 20px;
-  border: 2px solid var(--darkBlue);
+  border: 2px solid var(--lightBlue);
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
   transition: 0.25s;
-
   &:hover {
-    background-color: var(--darkBlue);
-    color: var(--whites);
-  }
-
-  .button__text {
-    animation-duration: 0.25s;
-  }
-
-  .button__icon {
-    color: var(--darkBlue);
-    display: none;
-    opacity: 0;
-    text-align: center;
-    animation-delay: 0.25s;
-    animation-duration: 0.5s;
+    border-color: var(--darkBlue);
   }
 }
 
@@ -146,6 +111,12 @@
 
 .iframe--hidden {
   display: none;
+}
+
+@media (max-width: 1024px) {
+  * {
+    font-size: 12px;
+  }
 }
 
 @keyframes submitRegisterButton {

@@ -1,4 +1,4 @@
-let navigationHeader = document.getElementById("navigationHeader");
+let header__navigation = document.getElementById("header__navigation");
 let overlay = document.getElementById("overlay");
 let showSideBar = false;
 let lastPosition = 0;
@@ -6,14 +6,14 @@ let lastPosition = 0;
 function toggleSidebar() {
   showSideBar = !showSideBar;
   if (showSideBar) {
-    header__navigation.style.right = "0";
-    header__navigation.style.animationName = "showSidebar";
+    navigationHeader.style.right = "0";
+    navigationHeader.style.animationName = "showSidebar";
     overlay.style.backdropFilter = "blur(2px)";
     overlay.style.animationName = "showSidebarFilter";
     showSideBar = true;
   } else {
-    header__navigation.style.right = "-50vw";
-    header__navigation.style.animationName = "closeSidebar";
+    navigationHeader.style.right = "-50vw";
+    navigationHeader.style.animationName = "closeSidebar";
     overlay.style.backdropFilter = "blur(0px)";
     overlay.style.animationName = "closeSidebarFilter";
     showSideBar = false;

@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.navigation__list {
+.navigation__list--header {
   padding: 0;
   gap: 1rem;
   display: flex;
@@ -30,7 +30,7 @@
   list-style: none;
 }
 
-.navigation__link {
+.navigation__link--header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +211,7 @@
     height: 100vh;
     right: -50vw;
     animation-duration: 0.5s;
-    .navigation__list {
+    .navigation__list--header {
       justify-content: space-around;
       flex-direction: column;
       .menu__button--toggle,
