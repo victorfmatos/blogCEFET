@@ -34,7 +34,7 @@ function removeError(index) {
 }
 
 registerForm.addEventListener("submit", (event) => {
-  if (false) {
+  if (true) {
     submitRegisterButton();
   } else {
     event.preventDefault();

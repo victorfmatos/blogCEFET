@@ -33,24 +33,19 @@
   height: 20rem;
 }
 
-.intro__cta {
-  position: relative;
-  bottom: 1rem;
-}
-
 .presentation__title {
   color: white;
-  font-size: 130px;
+  font-size: 8rem;
 }
 
 .intro__title {
   color: white;
-  font-size: 60px;
+  font-size: 3.8rem;
 }
 
 .intro__ctaText {
   color: white;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .intro__button--register,
@@ -76,20 +71,16 @@
   background-color: var(--lightBlue);
   animation-duration: 0.75s;
   .form--register {
+    margin-left: 1.5rem;
+    width: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.6rem;
-    margin-left: 1.5rem;
-    width: 20rem;
     opacity: 0;
     animation-delay: 0.75s;
     animation-duration: 0.75s;
   }
-}
-
-.form__label {
-  letter-spacing: 1.5px;
 }
 
 .form__input {
@@ -105,6 +96,10 @@
   right: 1.6rem;
 }
 
+.form__label {
+  letter-spacing: 1.5px;
+}
+
 .form__button--submit {
   position: absolute;
   right: 1.5rem;
@@ -113,10 +108,9 @@
   background-color: var(--white);
   color: var(--black);
   border-radius: 20px;
-  border: 2px solid var(--darkBlue);
+  border: 2px solid var(--lightBlue);
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
   transition: 0.25s;
-
   &:hover {
     background-color: var(--darkBlue);
     color: var(--whites);
@@ -133,6 +127,9 @@
     text-align: center;
     animation-delay: 0.25s;
     animation-duration: 0.5s;
+    &:hover {
+      color: var(--whites);
+    }
   }
 }
 
@@ -146,6 +143,12 @@
 
 .iframe--hidden {
   display: none;
+}
+
+@media (max-width: 1024px) {
+  * {
+    font-size: 12px;
+  }
 }
 
 @keyframes submitRegisterButton {

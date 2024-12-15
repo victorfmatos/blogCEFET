@@ -1,5 +1,6 @@
 @import "../../global/global.css";
 @import "./partials/header.css";
+@import "./partials/main.css";
 
 .homePage {
   background-image: linear-gradient(
