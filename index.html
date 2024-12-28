@@ -19,6 +19,7 @@
     <!-- CÓDIGOS CSS PADRÃO -->
     <link rel="stylesheet" href="assets/css/pages/index/index.css" />
     <!-- CÓDIGOS JS PADRÃO -->
+    <script src="assets/js/pages/index/showImage.js" defer></script>
     <script src="assets/js/pages/index/showMenu.js" defer></script>
     <title>Página inicial</title>
   </head>
@@ -127,7 +128,81 @@
       <div id="verticalLine--right"></div>
       <aside class="aside--right">
         <h3 class="aside__title">POSTE AQUI!</h3>
-        <div class="aside__postBlock"></div>
+        <div class="aside__post">
+          <!-- Bloco do formulário para postagem -->
+          <form
+            class="aside__form"
+            method="post"
+            enctype="multipart/form-data"
+            action=""
+          >
+            <!-- Grupo para o conteúdo do post -->
+            <div class="form__group form__group--textarea">
+              <label
+                for="postContent"
+                class="form__label form__label--textarea"
+              >
+                Conteúdo do Post
+              </label>
+              <textarea
+                name="post"
+                id="postContent"
+                class="form__input form__textarea"
+                placeholder="Escreva aqui seu post!"
+              ></textarea>
+            </div>
+
+            <!-- Grupo para upload de imagens -->
+            <div class="form__group form__group--file">
+              <!-- Subgrupo para o input e botão de fechar -->
+              <div class="form__subgroup form__subgroup--input">
+                <label for="inputFile" class="form__label form__label--file">
+                  Insira uma foto ;)
+                </label>
+                <button
+                  type="button"
+                  class="form__button form__button--close"
+                  onclick="removeImage()"
+                  aria-label="Remover imagem"
+                >
+                  <i
+                    class="fa-solid fa-xmark fa-lg form__icon form__icon--close"
+                  ></i>
+                </button>
+                <input
+                  type="file"
+                  name="image"
+                  id="inputFile"
+                  class="form__input form__input--file"
+                  accept="image/png, image/jpeg"
+                />
+              </div>
+
+              <!-- Subgrupo para exibir a imagem selecionada -->
+              <div
+                class="form__subgroup form__subgroup--preview"
+                id="previewContainer"
+                aria-hidden="true"
+              >
+                <img
+                  src=""
+                  alt="Sua foto"
+                  class="form__image"
+                  id="previewImage"
+                />
+              </div>
+            </div>
+
+            <!-- Botão para envio do formulário -->
+            <button
+              type="submit"
+              value="submit"
+              class="form__button form__button--submit"
+            >
+              POSTAR
+            </button>
+          </form>
+        </div>
       </aside>
     </main>
     <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
