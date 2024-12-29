@@ -38,7 +38,7 @@
             Criar conta
           </button>
           <h4 class="intro__ctaText">Já tem uma conta?</h4>
-          <button class="intro__button--login">Entrar</button>
+          <button class="intro__button--login" id="buttonLogin">Entrar</button>
         </div>
         <div class="modal--register" id="registerModal" aria-hidden="true">
           <form
@@ -46,12 +46,12 @@
             action="php/auth/register.php"
             target="register"
             method="post"
+            f
             id="registerForm"
           >
             <button
               type="button"
               class="modal__button--close"
-              onclick="closeRegisterBox()"
               aria-label="Fechar"
             >
               <i class="fa-solid fa-xmark fa-lg"></i>
@@ -65,8 +65,8 @@
                 type="text"
                 name="username"
                 id="username"
+                oninput="validateUsername()"
                 class="form__input form__input--required"
-                autocomplete="username"
                 placeholder="Seu nome de usuário"
               />
               <i class="fa-solid fa-user form__icon"></i>
@@ -79,6 +79,7 @@
                 type="email"
                 name="email"
                 id="email"
+                oninput="validateEmail()"
                 class="form__input form__input--required"
                 autocomplete="email"
                 placeholder="Seu email"
@@ -93,6 +94,7 @@
                 type="password"
                 name="password"
                 id="password"
+                oninput="validateMainPassword()"
                 class="form__input form__input--required"
                 autocomplete="new-password"
                 placeholder="Sua senha"
@@ -109,6 +111,7 @@
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
+                oninput="validateConfirmPassword()"
                 class="form__input form__input--required"
                 autocomplete="new-password"
                 placeholder="Sua senha de novo"
@@ -127,8 +130,65 @@
             </button>
           </form>
         </div>
+        <div class="modal--login" id="loginModal" aria-hidden="true">
+          <form
+            class="form--login"
+            action="php/auth/login.php"
+            target="login"
+            method="post"
+            id="loginForm"
+          >
+            <button
+              type="button"
+              class="modal__button--close"
+              aria-label="Fechar"
+            >
+              <i class="fa-solid fa-xmark fa-lg"></i>
+            </button>
+            <div class="form__group">
+              <label for="login" class="form__label"
+                >Nome de Usuário ou Email:
+              </label>
+              <br />
+              <input
+                type="text"
+                name="login"
+                id="login"
+                class="form__input form__input--required"
+                autocomplete="username"
+                placeholder="Seu nome de usuário ou email"
+              />
+              <i class="fa-solid fa-user form__icon"></i>
+            </div>
+
+            <div class="form__group">
+              <label for="currentPassword" class="form__label">Senha: </label>
+              <br />
+              <input
+                type="password"
+                name="currentPassword"
+                id="currentPassword"
+                class="form__input form__input--required"
+                autocomplete="current-password"
+                placeholder="Sua senha"
+              />
+              <i class="fa-solid fa-lock form__icon"></i>
+            </div>
+
+            <button
+              type="submit"
+              value="submit"
+              class="form__button--submit"
+              id="loginButton"
+            >
+              <span class="button__text" id="loginText">Entrar</span>
+              <i class="fa-solid fa-check button__icon" id="loginIcon"></i>
+            </button>
+          </form>
+        </div>
       </section>
     </main>
     <iframe class="iframe--hidden" name="register" aria-hidden="true"></iframe>
+    <iframe class="iframe--hidden" name="login" aria-hidden="true"></iframe>
   </body>
 </html>

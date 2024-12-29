@@ -58,19 +58,38 @@
   width: 25rem;
 }
 
-.modal--register {
+.modal--register,
+.modal--login {
   margin-left: 1rem;
   position: relative;
   display: none;
   float: right;
   color: var(--white);
   width: 24rem;
-  height: 19rem;
   border: 2px solid var(--white);
   border-radius: 10px;
   background-color: var(--lightBlue);
   animation-duration: 0.75s;
+}
+
+.modal--register {
+  height: 19rem;
   .form--register {
+    margin-left: 1.5rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.6rem;
+    opacity: 0;
+    animation-delay: 0.75s;
+    animation-duration: 0.75s;
+  }
+}
+
+.modal--login {
+  height: 13rem;
+  .form--login {
     margin-left: 1.5rem;
     width: 20rem;
     display: flex;
@@ -87,6 +106,7 @@
   width: 14rem;
   height: 1.8rem;
   border-color: var(--darkBlue);
+  outline: none;
 }
 
 .form__icon {
@@ -109,11 +129,12 @@
   color: var(--black);
   border-radius: 20px;
   border: 2px solid var(--lightBlue);
-  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 6px 6px 10px 0px var(--shadow-color);
   transition: 0.25s;
   &:hover {
     background-color: var(--darkBlue);
     color: var(--whites);
+    border-color: var(--darkBlue);
   }
 
   .button__text {
@@ -181,7 +202,7 @@
   }
 }
 
-@keyframes showRegisterBox {
+@keyframes showBox {
   0% {
     transform: scaleY(0%) scaleX(5%);
   }
@@ -193,7 +214,7 @@
   }
 }
 
-@keyframes closeRegisterBox {
+@keyframes closeBox {
   0% {
     transform: scaleY(100%) scaleX(100%);
   }

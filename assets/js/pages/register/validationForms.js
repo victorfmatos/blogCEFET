@@ -6,6 +6,8 @@ let registerButton = document.getElementById("registerButton");
 let registerText = document.getElementById("registerText");
 let registerIcon = document.getElementById("registerIcon");
 let toggleRegisterButton = false;
+let validateSentForm = false;
+const emailRegex = /^\w+([-+.']\w+)*@aluno.cefet-rj.br/;
 
 function submitRegisterButton() {
   toggleRegisterButton = !toggleRegisterButton;
@@ -23,6 +25,51 @@ function submitRegisterButton() {
       registerIcon.style.opacity = 1;
     }, 750);
   }
+  return false;
+}
+
+function validateUsername() {
+  if (formInputsRequired[0].value.length < 3) {
+    setError(0);
+    return false;
+  } else {
+    removeError(0);
+    return true;
+  }
+}
+
+function validateEmail() {
+  if (!emailRegex.test(formInputsRequired[1].value)) {
+    setError(1);
+    return false;
+  } else {
+    removeError(1);
+    return true;
+  }
+}
+
+function validateMainPassword() {
+  if (formInputsRequired[2].value.length < 8) {
+    setError(2);
+    return false;
+  } else {
+    removeError(2);
+    validateConfirmPassword();
+    return true;
+  }
+}
+
+function validateConfirmPassword() {
+  if (
+    !(formInputsRequired[2].value == formInputsRequired[3].value) ||
+    formInputsRequired[3].value.length < 8
+  ) {
+    setError(3);
+    return false;
+  } else {
+    removeError(3);
+    return true;
+  }
 }
 
 function setError(index) {
@@ -30,12 +77,19 @@ function setError(index) {
 }
 
 function removeError(index) {
-  formInputsRequired[index].style.border = "2px solid var(--lightBlue)";
+  formInputsRequired[index].style.border = "2px solid var(--darkBlue)";
 }
 
 registerForm.addEventListener("submit", (event) => {
-  if (true) {
+  if (
+    validateUsername() &&
+    validateEmail() &&
+    validateMainPassword() &&
+    validateConfirmPassword() &&
+    !validateSentForm
+  ) {
     submitRegisterButton();
+    validateSentForm = true;
   } else {
     event.preventDefault();
   }
