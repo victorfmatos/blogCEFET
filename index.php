@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if ((!isset($_SESSION["login"]) == true) and (!isset($_SESSION["currentPassword"]) == true)) {
+    unset($_SESSION["login"]);
+    unset($_SESSION["currentPassword"]);
+    header("Location: register.html");
+  }
+  $logado = $_SESSION["login"]
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -27,7 +36,7 @@
     <header class="header">
       <!-- Parte à esquerda com o logo e menu mobile -->
       <div class="header__left">
-        <a href="index.html"
+        <a href="index.php"
           ><img
             src="assets/images/logoCEFET.webp"
             alt="logo do CEFET"
@@ -39,7 +48,7 @@
       <nav class="header__navigation" id="navigationHeader">
         <ul class="navigation__list--header">
           <li>
-            <a href="index.html" class="navigation__link--header">INÍCIO</a>
+            <a href="index.php" class="navigation__link--header">INÍCIO</a>
           </li>
           <li><a href="#" class="navigation__link--header">DESTAQUES</a></li>
           <li>
@@ -119,6 +128,9 @@
             </li>
             <li class="navigation__itemList--aside">
               <a href="#" class="navigation__link--aside">PÁGINA DO CEFET</a>
+            </li>
+            <li class="navigation__itemList--aside">
+              <a href="php/auth/exit.php" class="navigation__link--aside aside--profile">SAIR</a>
             </li>
           </ul>
         </nav>

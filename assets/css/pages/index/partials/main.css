@@ -39,6 +39,13 @@
   }
 }
 
+.aside--profile {
+  background-color: var(--lightRed);
+  &:hover {
+    border-color: var(--darkRed);
+  }
+}
+
 #verticalLine--left {
   top: 8rem;
   left: 18%;
@@ -86,7 +93,7 @@
     height: 50%;
     .form__label--textarea {
       display: inline-block;
-      height: 5%;
+      height: 1.25rem;
     }
     .form__textarea {
       outline: none;
