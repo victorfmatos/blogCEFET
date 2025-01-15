@@ -7,7 +7,7 @@ let registerText = document.getElementById("registerText");
 let registerIcon = document.getElementById("registerIcon");
 let toggleRegisterButton = false;
 let validateSentForm = false;
-const emailRegex = /^\w+([-+.']\w+)*@aluno.cefet-rj.br/;
+const emailRegex = /^\w+([-+.']\w+)*@aluno.cefet-rj.br|@cefet-rj.br/;
 
 function submitRegisterButton() {
   toggleRegisterButton = !toggleRegisterButton;

@@ -5,11 +5,11 @@
 
     $username = $_POST["username"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $confirmPassword = $_POST["confirmPassword"];
   
     $query = "INSERT INTO users(username, email, password) VALUES ('$username', '$email', '$password')";
-    $result = mysqli_query($connection, $query);  
+    $result = $connection->query($query);  
   }
 
 ?>

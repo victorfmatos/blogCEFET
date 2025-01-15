@@ -28,6 +28,7 @@
     <!-- CÓDIGOS CSS PADRÃO -->
     <link rel="stylesheet" href="assets/css/pages/index/index.css" />
     <!-- CÓDIGOS JS PADRÃO -->
+    <script src="assets/js/pages/index/submitPost.js" defer></script>
     <script src="assets/js/pages/index/showImage.js" defer></script>
     <script src="assets/js/pages/index/showMenu.js" defer></script>
     <title>Página inicial</title>
@@ -124,10 +125,7 @@
               <a href="#" class="navigation__link--aside">CURTIDOS</a>
             </li>
             <li class="navigation__itemList--aside">
-              <a href="#" class="navigation__link--aside">AMIGOS</a>
-            </li>
-            <li class="navigation__itemList--aside">
-              <a href="#" class="navigation__link--aside">PÁGINA DO CEFET</a>
+              <a href="https://cefet-rj.br/" target="_blank" class="navigation__link--aside">PÁGINA DO CEFET</a>
             </li>
             <li class="navigation__itemList--aside">
               <a href="php/auth/exit.php" class="navigation__link--aside aside--profile">SAIR</a>
@@ -146,7 +144,9 @@
             class="aside__form"
             method="post"
             enctype="multipart/form-data"
-            action=""
+            action="php/contents/post.php"
+            target="post"
+            id="postForm"
           >
             <!-- Grupo para o conteúdo do post -->
             <div class="form__group form__group--textarea">
@@ -159,6 +159,7 @@
               <textarea
                 name="post"
                 id="postContent"
+                oninput="validatePost()"
                 class="form__input form__textarea"
                 placeholder="Escreva aqui seu post!"
               ></textarea>
@@ -209,14 +210,16 @@
             <button
               type="submit"
               value="submit"
+              id="postButton"
               class="form__button form__button--submit"
             >
-              POSTAR
+              POSTAR 
             </button>
           </form>
         </div>
       </aside>
     </main>
     <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+    <iframe class="iframe--hidden" name="post" aria-hidden="true"></iframe>
   </body>
 </html>

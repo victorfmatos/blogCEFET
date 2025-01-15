@@ -7,6 +7,7 @@
 .aside--left,
 .aside--right {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -178,4 +179,8 @@
       border-color: var(--darkBlue);
     }
   }
+}
+
+.iframe--hidden {
+  display: none;
 }

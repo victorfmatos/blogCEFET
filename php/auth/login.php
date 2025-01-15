@@ -5,14 +5,16 @@
     $login = $_POST["login"];
     $currentPassword = $_POST["currentPassword"];
     
-    $sql = "SELECT * FROM users WHERE (email = ? OR username = ?) AND password = ?";
+    $sql = "SELECT * FROM users WHERE (email = ? OR username = ?) LIMIT 1";
     
     $result = $connection->prepare($sql);
-    $result->bind_param("sss", $login, $login, $currentPassword);
+    $result->bind_param("ss", $login, $login);
     $result->execute();
     $result = $result->get_result();
-    
-    if (mysqli_num_rows($result) < 1) {
+    $user = $result->fetch_assoc();
+    $verified = password_verify($currentPassword, $user["password"]);
+
+    if (!$verified) {
       unset($_SESSION["login"]);
       unset($_SESSION["currentPassword"]);
       header("Location: ../../register.html");
