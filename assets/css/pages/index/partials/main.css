@@ -164,6 +164,7 @@
     }
   }
   .form__button--submit {
+    position: relative;
     font-weight: bold;
     margin-bottom: 0.75rem;
     width: 5.5rem;
@@ -173,11 +174,44 @@
     border-radius: 20px;
     border: 2px solid var(--lightBlue);
     box-shadow: 6px 6px 10px 0px var(--shadow-color);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    &.submitted {
+      background-color: var(--lightGreen);
+      border-color: var(--lightGreen);
+      width: 48px;
+      padding: 12px;
+      &:hover {
+        background-color: var(--lightGreen);
+        border-color: var(--lightGreen);
+      }
+    }
+    .button__text {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .button__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: var(--black);
+    }
     &:hover {
       background-color: var(--darkBlue);
       color: var(--whites);
       border-color: var(--darkBlue);
     }
+  }
+  .submitted .button__text {
+    opacity: 0;
+  }
+  .submitted .button__icon {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 }
 

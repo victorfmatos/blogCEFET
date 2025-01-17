@@ -213,7 +213,8 @@
               id="postButton"
               class="form__button form__button--submit"
             >
-              POSTAR 
+              <span class="button__text" id="postText">POSTAR</span> 
+              <i class="fa-solid fa-check button__icon" id="postIcon"></i>
             </button>
           </form>
         </div>
