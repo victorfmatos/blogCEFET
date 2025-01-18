@@ -8,7 +8,9 @@
   }
   $logado = $_SESSION["login"];
 
-  $sql = "SELECT * FROM users u JOIN posts p on u.id = p.user_id;";
+  $query = strtolower($_GET["search"]);
+
+  $sql = "SELECT * FROM users u JOIN posts p on u.id = p.user_id WHERE username LIKE '%$query%' OR content LIKE '%$query%'";
   $resultPost = $connection->query($sql);
 ?>
 <!DOCTYPE html>
@@ -66,7 +68,7 @@
       <div class="header__right">
         <!-- Barra de pesquisa -->
         <div class="header__search">
-          <form action="search.php" method="get">
+          <form action="">
             <button type="submit" class="search__button">
               <i class="fas fa-search text-pure-0" id="search__icon"></i>
             </button>
@@ -141,13 +143,6 @@
       <section class="section">
         <?php 
           while ($user_data = mysqli_fetch_assoc($resultPost)) {
-            $sql = "SELECT username FROM users WHERE id = ?";
-            $resultUser = $connection->prepare($sql);
-            $resultUser->bind_param("s", $user_data["user_id"]);
-            $resultUser->execute();
-            $resultUser = $resultUser->get_result();
-            $username = $resultUser->fetch_assoc()["username"];
-            
             echo '<div class="section__post">';
             echo '<div class="subSection__post">';
             echo '<h3 class="title__post">' . $user_data["username"] . '</h3>';
